@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "846166118343",
+    "project_id": "coinbuddy-f4a22",
+    "storage_bucket": "coinbuddy-f4a22.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846166118343:android:57eb3a9f2037a797d493e2",
+        "android_client_info": {
+          "package_name": "com.example.coinbuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "846166118343-222tnkamgkfpda5mi7der1s7cosselmc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1aPT-7SU7UDlazeXhGpMhWBrSye1Xz4w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "846166118343-222tnkamgkfpda5mi7der1s7cosselmc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
