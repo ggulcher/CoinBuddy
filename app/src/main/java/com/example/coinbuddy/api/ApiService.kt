@@ -22,5 +22,4 @@ interface ApiService {
         @Query("coinId") coinId: String,
         @Query("period") period: String = "24h"
     ): ChartDto
-
 }

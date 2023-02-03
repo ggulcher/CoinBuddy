@@ -1,7 +1,7 @@
 package com.example.coinbuddy.di
 
-import com.example.coinbuddy.data.FirebaseRepository
-import com.example.coinbuddy.data.FirebaseRepositoryImpl
+import com.example.coinbuddy.data.repository.FirebaseCoinFavoriteManager
+import com.example.coinbuddy.data.repository.FirebaseCoinFavoriteManagerImpl
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -30,8 +30,7 @@ object FirebaseModule {
     fun providesFirebaseRepository(
         firebaseAuth: FirebaseAuth,
         fireStore: FirebaseFirestore
-    ): FirebaseRepository {
-        return FirebaseRepositoryImpl(firebaseAuth, fireStore)
+    ): FirebaseCoinFavoriteManager {
+        return FirebaseCoinFavoriteManagerImpl(firebaseAuth, fireStore)
     }
-
 }

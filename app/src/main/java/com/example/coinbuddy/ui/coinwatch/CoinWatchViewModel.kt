@@ -1,23 +1,19 @@
 package com.example.coinbuddy.ui.coinwatch
 
-import android.app.Application
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.coinbuddy.api.models.CoinDetailResponse
-import com.example.coinbuddy.data.FirebaseRepository
-import com.example.coinbuddy.data.WatchedCoin
+import com.example.coinbuddy.data.repository.FirebaseCoinFavoriteManager
+import com.example.coinbuddy.data.models.WatchedCoin
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlinx.coroutines.launch
 
 @HiltViewModel
 class CoinWatchViewModel @Inject constructor(
-    private val firebaseRepository: FirebaseRepository
+    private val firebaseCoinFavoriteManager: FirebaseCoinFavoriteManager
 ) : ViewModel() {
 
     var state by mutableStateOf(CoinWatchState())
@@ -28,7 +24,7 @@ class CoinWatchViewModel @Inject constructor(
 
     private fun getWatchedCoins() {
         viewModelScope.launch {
-            firebaseRepository.getWatchedCoins().let { result ->
+            firebaseCoinFavoriteManager.getWatchedCoins().let { result ->
                 state = state.copy(watchList = result)
             }
         }

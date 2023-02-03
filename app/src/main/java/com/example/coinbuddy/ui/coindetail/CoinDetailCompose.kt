@@ -1,21 +1,24 @@
 package com.example.coinbuddy.ui.coindetail
 
-import androidx.compose.foundation.layout.*
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import android.widget.Toast
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.List
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.example.coinbuddy.data.WatchedCoin
+import com.example.coinbuddy.data.models.WatchedCoin
 import com.example.coinbuddy.navigation.Screens
 import com.example.coinbuddy.ui.coindetail.views.CoinChart
 import com.example.coinbuddy.ui.coindetail.views.DetailButton
@@ -29,6 +32,7 @@ fun CoinDetailComposable(
 ) {
     val state = viewModel.state
     val uriHandler = LocalUriHandler.current
+    val context = LocalContext.current
 
     Column(
         modifier = Modifier
@@ -71,6 +75,7 @@ fun CoinDetailComposable(
                             name = state.coin.name!!
                         )
                     )
+                    Toast.makeText(context, "${state.coin.name} saved.", Toast.LENGTH_SHORT).show()
                 }
             )
             DetailButton(
@@ -84,7 +89,8 @@ fun CoinDetailComposable(
                             name = state.coin.name!!
                         )
                     )
-                    navController.navigate(Screens.CoinList.route)
+                    navController.navigate(Screens.CoinList.route) { popUpTo(0) }
+                    Toast.makeText(context, "${state.coin.name} removed.", Toast.LENGTH_SHORT).show()
                 }
             )
         }

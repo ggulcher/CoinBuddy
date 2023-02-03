@@ -1,9 +1,13 @@
 package com.example.coinbuddy.ui.coinlist.views
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
@@ -16,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.example.coinbuddy.ui.theme.performanceRed
 
 @Composable
 fun TopBar(
@@ -24,22 +29,23 @@ fun TopBar(
     onClick: () -> Unit
 ) {
     Row(
+        modifier = modifier.fillMaxWidth().padding(horizontal = 8.dp),
         verticalAlignment = Alignment.CenterVertically,
-        modifier = modifier.fillMaxWidth()
+        horizontalArrangement = Arrangement.Center
     ) {
-        Box (
-            Modifier
-            .fillMaxWidth()
-        ){
+        Box(
+            Modifier.fillMaxWidth()
+        ) {
             Text(
                 text = title,
                 fontWeight = FontWeight.Bold,
                 style = MaterialTheme.typography.h5,
-                color = Color.Black ,
+                color = Color.Black,
                 modifier = Modifier.align(Alignment.Center)
             )
             IconButton(
                 modifier = Modifier
+                    .size(50.dp)
                     .align(Alignment.CenterEnd)
                     .padding(8.dp),
                 onClick = { onClick() }
@@ -47,6 +53,8 @@ fun TopBar(
                 Icon(
                     imageVector = Icons.Default.Favorite,
                     contentDescription = "Favorites",
+                    modifier = Modifier.fillMaxSize(),
+                    tint = MaterialTheme.colors.performanceRed
                 )
             }
         }

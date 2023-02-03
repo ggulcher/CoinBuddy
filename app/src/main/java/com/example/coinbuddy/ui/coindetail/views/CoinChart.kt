@@ -26,7 +26,7 @@ fun CoinChart(
 
     state.chart?.let { chartsValue ->
         chartsValue.map { value ->
-            for (i in value){
+            for (i in value) {
                 data.add(Entry(value[0], value[1]))
             }
         }
@@ -71,7 +71,7 @@ fun CoinChart(
 fun LineChart.drawLineData(
     lineDataSet: LineDataSet? = null,
 ) {
-    if (lineDataSet !=null) {
+    if (lineDataSet != null) {
         clear()
         data = LineData(lineDataSet).apply {
             setDrawValues(false)

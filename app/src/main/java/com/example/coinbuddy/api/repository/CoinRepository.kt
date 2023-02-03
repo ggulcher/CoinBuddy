@@ -12,5 +12,4 @@ interface CoinRepository {
     suspend fun getCoinById(coinId: String): CoinItemDto
 
     suspend fun getChartsData(coinId: String): ChartDto
-
 }

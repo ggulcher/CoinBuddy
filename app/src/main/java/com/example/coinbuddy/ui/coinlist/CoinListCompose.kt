@@ -1,12 +1,20 @@
 package com.example.coinbuddy.ui.coinlist
 
 import android.annotation.SuppressLint
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.material.*
-import androidx.compose.runtime.*
+import androidx.compose.material.Scaffold
+import androidx.compose.material.rememberScaffoldState
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
@@ -58,11 +66,14 @@ fun CoinListComposable(
                     state = lazyListState,
                     verticalArrangement = Arrangement.spacedBy(10.dp)
                 ) {
-                    items(items = state.coins.filter {
-                        it.name!!.contains(isBeingSearched, ignoreCase = true) ||
+                    items(
+                        items = state.coins.filter {
+                            it.name!!.contains(isBeingSearched, ignoreCase = true) ||
                                 it.id!!.contains(isBeingSearched, ignoreCase = true) ||
                                 it.symbol!!.contains(isBeingSearched, ignoreCase = true)
-                    }, key = { it.id!! }) { coins ->
+                        },
+                        key = { it.id!! }
+                    ) { coins ->
                         CoinListRow(
                             coin = coins,
                             navController = navController

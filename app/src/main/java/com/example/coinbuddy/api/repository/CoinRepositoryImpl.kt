@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class CoinRepositoryImpl @Inject constructor(
     private val api: ApiService
-): CoinRepository {
+) : CoinRepository {
 
     override suspend fun getCoins(): CoinsDto {
         return api.getCoins()
