@@ -7,7 +7,7 @@ A cryptocurrency companion app for researching and organizing your crypto invest
 ## Tech Stack
 * [Kotlin](https://kotlinlang.org/) - The officially suppoorted Android language by Google
 * [Dagger Hilt](https://dagger.dev/hilt/) - Easy and quick dependency injection
-* [Coroutine](https://developer.android.com/kotlin/coroutines)
+* [Coroutines](https://developer.android.com/kotlin/coroutines)
 * [Retrofit](https://square.github.io/retrofit/)
 * [Moshi](https://github.com/square/moshi)
 * [Jetpack Components](https://developer.android.com/jetpack)
