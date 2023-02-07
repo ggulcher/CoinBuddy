@@ -28,7 +28,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun providesDashCoinRepository(
+    fun providesCoinRepository(
         api: ApiService
     ): CoinRepository {
         return CoinRepositoryImpl(api)
