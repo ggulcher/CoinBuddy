@@ -13,7 +13,7 @@ A cryptocurrency companion app for researching and organizing your crypto invest
 * [Jetpack Components](https://developer.android.com/jetpack)
 * [MPAndroidChart](https://github.com/PhilJay/MPAndroidChart)
 
-## Screenshots
-| List | Detail | Favorite |
-|---|---|---|
-| <img src="https://user-images.githubusercontent.com/58752175/216703738-c3c06ff7-2a47-44c0-ba12-3078ab96b57c.jpg" width="260"> | <img src="https://user-images.githubusercontent.com/58752175/216703722-6978bc65-fc92-4deb-a659-4c2ecadc570c.jpg" width="260"> | <img src="https://user-images.githubusercontent.com/58752175/216703638-0fe955e0-98d8-4e85-9a1e-820ee116a70d.jpg" width="260"> |
+## APPT Fucntions
+| Demo |
+|---|
+| <img src="https://user-images.githubusercontent.com/58752175/221627609-2171d668-8f3b-425f-8ddf-f0e9b73b8ae2.mp4" width="260"> |
